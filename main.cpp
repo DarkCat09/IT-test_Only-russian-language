@@ -1,5 +1,6 @@
 #include "TXLib.h"
 #include <iostream>
+#include <string>
 #include <fstream>
 using namespace std;
 
@@ -36,9 +37,23 @@ void getQuestionsAndAnswers(Quest* qs_array);
 
 int main()
 {
-    txCreateWindow (800, 600);
+    txCreateWindow(800, 600);
     char qNumber_str[5];
     Quest questions[11];
+    
+    char testName[50];
+    char textontheStartButton[50];
+    
+    ifstream texts("texts.conf");
+    char b[100];
+    
+    texts.getline(buff, 50);
+    testName = buff;
+    
+    texts.getline(buff, 50);
+    textontheStartButton = buff;
+    
+    texts.close();
 
     ifstream bckgnd("backgroundOfTest.conf");
     char buff[50];
@@ -191,7 +206,7 @@ int main()
 
     char scoreStr[5];
     sprintf(scoreStr, "%d", scores);
-    txTextOut(txGetExtentX()/2 - 180, txGetExtentY()/2 - 10, ("Результат: " + (string)scoreStr + " из 11.").c_str());
+    txTextOut(txGetExtentX()/2 - 180, txGetExtentY()/2 - 10, ("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + (string)scoreStr + " ГЁГ§ 11.").c_str());
 
     txSleep(500);
 
@@ -221,7 +236,7 @@ void drawMenu(Screen canvas)
 {
     txSelectFont("Calibri", 40);
     txSetColor(TX_WHITE);
-    txTextOut(canvas.middleX - 50, canvas.middleY - 150, "IT-тест");
+    txTextOut(canvas.middleX - 50, canvas.middleY - 150, testName);
 
     txSetColor(TX_BLACK);
     txSetFillColor(BISQUECOLOR);
@@ -232,6 +247,13 @@ void drawMenu(Screen canvas)
         canvas.middleX + 100,
         canvas.middleY +  50
     );
+    txDrawText(
+        canvas.middleX - 100,
+        canvas.middleY -  50,
+        canvas.middleX + 100,
+        canvas.middleY +  50,
+        textontheStartButton
+    )
 }
 
 void getQuestionsAndAnswers(Quest* qs_array)
