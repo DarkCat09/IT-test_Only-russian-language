@@ -6,6 +6,10 @@ IT-test
 Developer Andrew Chechkenev (DarkCat)
 -------------------------------------
 
+To start test, install Code::Blocks 12.11 and open the file "main.cpp".
+Then click on the button with a picture of a green triangle and a yellow gear.
+Program started!
+
 Press "Start" to start test.
 
 For add your questions to test, open the file "qa.txt". Add questions following the instructions:
