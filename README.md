@@ -6,7 +6,7 @@ IT-test
 Developer Andrew Chechkenev (DarkCat)
 -------------------------------------
 
-Press "Старт" to start test.
+Press "Start" to start test.
 
 For add your questions to test, open the file "qa.txt". Add questions following the instructions:
 - Write question
@@ -19,4 +19,8 @@ Done!
 Repeat this operation to add more questions.
 
 For change pictures for questions, go to the directory pictures/picturesForQuestions.
-In this directory add your pictures and кename them to the numbers corresponding to the question numbersю
+In this directory add your pictures and rename them to the numbers corresponding to the question numbers.
+
+For change name of test, edit the file texts.conf:
+- First string of file is name of test
+- Second string of file is text in the start-button
